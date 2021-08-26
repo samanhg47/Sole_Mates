@@ -7,7 +7,7 @@
 
 >## *Description*
 
-Sole Mates is an social media and e-commerce website specifically for shoes (think instagram but just shoe pics). Website can be used to show off your new kicks or discover new styles. Users can also purchase the shoes directly from our site.
+Sole Mates is an social App specifically for shoes (think instagram but just shoe pics). Sole Mates can be used to show off your new kicks or discover new styles.
 
 ---
 >## *Technologies Used* 
