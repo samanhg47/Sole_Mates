@@ -4,7 +4,6 @@
 ---
 
 ![SHOES](images/red.jpeg)
-<!-- <img src="images/red.jpeg" alt="drawing" width="500"/> -->
 
 >## *Description*
 
@@ -13,14 +12,10 @@ Sole Mates is an social media and e-commerce website specifically for shoes (thi
 ---
 >## *Technologies Used* 
 
-<!-- The website project will utilize the technologies that make up the M.E.R.N stack. (MongoDB, Express.js, React.js, and Node.js) -->
-
 * Mongodb
 * Express.js
 * React.js
 * Node.js
-
-<!-- ![](images/mern.jpeg) -->
 
 ---
 
@@ -28,7 +23,6 @@ Sole Mates is an social media and e-commerce website specifically for shoes (thi
 
 The database will take in user info as well as the info related to the shoes being posted. Database structure will be denormalized utilizing a one to many relationship connecting a single user to multiple posts. Entries will be connected by a generated objectId. 
 
-<!-- ![](images/erd.png) -->
 <img src="images/erd.png" width="725" style = "text-align:center"/>
 
 ---
