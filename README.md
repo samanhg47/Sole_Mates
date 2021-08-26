@@ -7,7 +7,7 @@
 
 >## *Description*
 
-Sole Mates is an social media and e-commerce website specifically for shoes (think instagram but just shoe pics). Website can be used to show off your new kicks or discover new styles. Users can also purchase the shoes directly from our site.
+Sole Mates is an social App specifically for shoes (think instagram but just shoe pics). Sole Mates can be used to show off your new kicks or discover new styles.
 
 ---
 >## *Technologies Used* 
@@ -23,7 +23,7 @@ Sole Mates is an social media and e-commerce website specifically for shoes (thi
 
 The database will take in user info as well as the info related to the shoes being posted. Database structure will be denormalized utilizing a one to many relationship connecting a single user to multiple posts. Entries will be connected by a generated objectId. 
 
-<img src="images/erd.png" width="725" style = "text-align:center"/>
+<img src="images/ERD.PNG" width="725" style = "text-align:center"/>
 
 ---
 >## *Component Hierarchy Diagram*
