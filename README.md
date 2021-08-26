@@ -12,6 +12,7 @@ Sole Mates is an ecommerce website. If you're looking to buy OR sell the hottest
 >***Technologies Used*** 
 
 ![](images/mern.jpeg)
+
 ---
 
 >***Entity Relationship Diagram***
