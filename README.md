@@ -1,5 +1,5 @@
 # Sole Mates
-### Date: 08/25/21
+### Date Started: 08/25/21
 ### By: Sa'man Griffiths, Ryan Craig, and Raza Khalid
 ---
 
