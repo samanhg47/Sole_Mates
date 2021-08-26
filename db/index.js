@@ -1,9 +1,12 @@
 const mongoose = require('mongoose')
 
-let MONGODB_URI = 'mongodb://127.0.0.1:27017/soleMatesDatabase'
+let MONGODB_URL = 'mongodb://127.0.0.1:27017/soleMatesDatabase'
 
 mongoose
-    .connect(MONGODB_URI, { useUnifiedTopology: true, useNewUrlParser: true })
+    .connect(MONGODB_URL, { 
+        useUnifiedTopology: true, 
+        useNewUrlParser: true 
+    })
     .then(() => {
         console.log('Successfully connected to MongoDB.')
     })
