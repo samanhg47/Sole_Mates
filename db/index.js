@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 require('dotenv').config()
 
 // let MONGODB_URI = 'mongodb://127.0.0.1:27017/soleMatesDatabase'
-let MONGODB_URI = process.env.NODE_ENV === 'production' ? process.env.MONGODB_URI : 'mongodb://127.0.0.1:27017/todo_tracker'
+let MONGODB_URI = process.env.NODE_ENV === 'production' ? process.env.MONGODB_URI : 'mongodb://127.0.0.1:27017/soleMatesDatabase'
 
 mongoose
     .connect(MONGODB_URI, { 
