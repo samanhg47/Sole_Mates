@@ -1,9 +1,9 @@
 const db = require('../db')
-const { Shoe } = require('../models') 
+const { Shoe } = require('../models')
 
 const createShoe = async (req, res) => {
   try {
-    console.log("createShoe", req.body)
+    console.log('createShoe', req.body)
     const shoe = await new Shoe(req.body)
     await shoe.save()
     return res.status(201).json({
@@ -40,5 +40,3 @@ module.exports = {
   getAllNewsfeed,
   getShoe
 }
-
-
