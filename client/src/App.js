@@ -6,13 +6,17 @@ import SearchResults from './components/SearchResults'
 import Newsfeed from './components/Newsfeed'
 import NewPost from './components/NewPost'
 // import { post } from '../../models/shoe'
-import {BASE_URL} from './globals'
+import { BASE_URL } from './globals'
 
 function App() {
   const [posts, setPosts] = useState([])
   const [searched, toggleSearched] = useState(false)
   const [searchResults, setSearchResults] = useState([])
   const [searchQuery, setSearchQuery] = useState('')
+  const [color, setColor] = useState('')
+  const [model, setModel] = useState('')
+  const [brand, setBrand] = useState('')
+  const [postRequest, toggleRequest] = useState(false)
 
   const getPosts = async () => {
     const res = await axios.get(`${BASE_URL}/`)
@@ -20,9 +24,21 @@ function App() {
     setPosts(res.data.shoes)
   }
 
+  const createNewPost = (e) => {
+    e.preventDefault()
+
+    const newPost = {
+      brand: `${brand}`,
+      model: `${model}`,
+      color: `${color}`
+    }
+    axios.post(`${BASE_URL}/new-post`, newPost)
+    toggleRequest(true)
+  }
+
   useEffect(() => {
     getPosts()
-  }, [])
+  }, [postRequest])
 
   return (
     <div className="App">
@@ -32,7 +48,12 @@ function App() {
         toggleSearched={toggleSearched}
         setSearchResults={setSearchResults}
       />
-      <NewPost />
+      <NewPost
+        createNewPost={createNewPost}
+        setBrand={setBrand}
+        setColor={setColor}
+        setModel={setModel}
+      />
       {searched
         ? searchResults.map((result) => (
             <SearchResults
