@@ -3,7 +3,7 @@
 ### By: Sam'an Griffiths, Ryan Craig, and Raza Khalid
 ---
 
-![SHOES](images/red.jpeg)
+![SHOES](client/public/images/red.jpeg)
 
 >## *Description*
 
@@ -23,12 +23,12 @@ Sole Mates is an social App specifically for shoes (think instagram but just sho
 
 The database will take in user info as well as the info related to the shoes being posted. Database structure will be denormalized utilizing a one to many relationship connecting a single user to multiple posts. Entries will be connected by a generated objectId. 
 
-<img src="images/ERD.PNG" width="725" style = "text-align:center"/>
+<img src="client/public/images/ERD.PNG" width="725" style = "text-align:center"/>
 
 ---
 >## *Component Hierarchy Diagram*
 
-![Component Hierarchy Diagram](images/comp.png)
+![Component Hierarchy Diagram](client/public/images/comp.png)
 
 >## *Task List*
 
