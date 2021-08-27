@@ -1,36 +1,20 @@
-import axios from 'axios'
-import React, { useState } from 'react'
-import {BASE_URL} from '../globals'
+import React from 'react'
 
 export default function NewPost(props) {
-  const [color, setColor] = useState('')
-  const [model, setModel] = useState('')
-  const [brand, setBrand] = useState('')
 
   const brandOnChonge = (e) => {
-    setBrand(e.target.value)
+    props.setBrand(e.target.value)
   }
   const colorOnChonge = (e) => {
-    setColor(e.target.value)
+    props.setColor(e.target.value)
   }
   const modelOnChonge = (e) => {
-    setModel(e.target.value)
-  }
-
-  const createNewPost = (e) => {
-    e.preventDefault()
-
-    const newPost = {
-      brand: `${brand}`,
-      model: `${model}`,
-      color: `${color}`
-    }
-    axios.post(`${BASE_URL}/new-post`, newPost)
+    props.setModel(e.target.value)
   }
 
   return (
     <div className="post">
-      <form onSubmit={(e) => createNewPost(e)}>
+      <form onSubmit={(e) => props.createNewPost(e)}>
         <input
           type="text"
           name="Brand"
