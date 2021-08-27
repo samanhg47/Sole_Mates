@@ -16,29 +16,33 @@ function App() {
   const [color, setColor] = useState('')
   const [model, setModel] = useState('')
   const [brand, setBrand] = useState('')
-  const [postRequest, toggleRequest] = useState(false)
+  const [request, changeIt] = useState(false)
+  let newPost = {
+    brand: ``,
+    model: ``,
+    color: ``
+  }
 
   const getPosts = async () => {
     const res = await axios.get(`${BASE_URL}/`)
-    console.log(res.data.shoes)
     setPosts(res.data.shoes)
   }
 
-  const createNewPost = (e) => {
+  const createNewPost = async (e) => {
     e.preventDefault()
-
-    const newPost = {
+    newPost = {
       brand: `${brand}`,
       model: `${model}`,
       color: `${color}`
     }
-    axios.post(`${BASE_URL}/new-post`, newPost)
-    toggleRequest(true)
+    const res = await axios.post(`${BASE_URL}/new-post`, newPost)
+    request ? changeIt(false) : changeIt(true)
+    return res
   }
 
   useEffect(() => {
     getPosts()
-  }, [postRequest])
+  }, [request])
 
   return (
     <div className="App">
