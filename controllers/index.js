@@ -1,5 +1,5 @@
 const db = require('../db')
-const { Shoe } = require('../models') 
+const { Shoe } = require('../models')
 
 const createShoe = async (req, res) => {
   try {
@@ -41,5 +41,3 @@ module.exports = {
   getAllNewsfeed,
   getShoe
 }
-
-
