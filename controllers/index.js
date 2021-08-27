@@ -26,7 +26,7 @@ const getAllNewsfeed = async (req, res) => {
 
 const getShoe = async (req, res) => {
   try {
-    const brand = req.params.keyword
+    const brand = req.params.brand
     let shoes = await Shoe.find({ brand: brand })
     return res.status(201).json({
       shoes
