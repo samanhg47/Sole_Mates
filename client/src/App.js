@@ -6,6 +6,7 @@ import SearchResults from './components/SearchResults'
 import Newsfeed from './components/Newsfeed'
 import NewPost from './components/NewPost'
 // import { post } from '../../models/shoe'
+import {BASE_URL} from './globals'
 
 function App() {
   const [posts, setPosts] = useState([])
@@ -14,7 +15,7 @@ function App() {
   const [searchQuery, setSearchQuery] = useState('')
 
   const getPosts = async () => {
-    const res = await axios.get(`http://localhost:3001/`)
+    const res = await axios.get(`${BASE_URL}/`)
     console.log(res.data.shoes)
     setPosts(res.data.shoes)
   }

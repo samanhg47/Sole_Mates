@@ -1,5 +1,6 @@
 import axios from 'axios'
 import React, { useState } from 'react'
+import {BASE_URL} from '../globals'
 
 export default function NewPost(props) {
   const [color, setColor] = useState('')
@@ -16,12 +17,6 @@ export default function NewPost(props) {
     setModel(e.target.value)
   }
 
-  // const [newPost, setNewPost] = useState({
-  //   brand: ``,
-  //   model: ``,
-  //   color: ``
-  // })
-
   const createNewPost = (e) => {
     e.preventDefault()
 
@@ -30,7 +25,7 @@ export default function NewPost(props) {
       model: `${model}`,
       color: `${color}`
     }
-    axios.post('http://localhost:3001/new-post', newPost)
+    axios.post(`${BASE_URL}/new-post`, newPost)
   }
 
   return (
