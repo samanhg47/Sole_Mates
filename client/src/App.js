@@ -5,6 +5,7 @@ import Nav from './components/Nav'
 import SearchResults from './components/SearchResults'
 import Newsfeed from './components/Newsfeed'
 import NewPost from './components/NewPost'
+// import { post } from '../../models/shoe'
 
 function App() {
   const [posts, setPosts] = useState([])
@@ -14,8 +15,8 @@ function App() {
 
   const getPosts = async () => {
     const res = await axios.get(`http://localhost:3001/`)
-    console.log(res.data)
-    setPosts(res.data)
+    console.log(res.data.shoes)
+    setPosts(res.data.shoes)
   }
 
   useEffect(() => {
@@ -34,18 +35,17 @@ function App() {
       {searched
         ? searchResults.map((result) => (
             <SearchResults
-              key={result.id}
+              key={result._id}
               searchResults={searchResults}
               image={result.image}
               model={result.model}
               color={result.color}
               brand={result.brand}
-              user={result.user_id}
             />
           ))
         : posts.map((result) => (
             <Newsfeed
-              key={result.id}
+              key={result._id}
               image={result.image}
               model={result.model}
               color={result.color}

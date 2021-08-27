@@ -16,21 +16,21 @@ export default function NewPost(props) {
     setModel(e.target.value)
   }
 
-  const [newPost, setNewPost] = useState({
-    brand: ``,
-    model: ``,
-    color: ``
-  })
+  // const [newPost, setNewPost] = useState({
+  //   brand: ``,
+  //   model: ``,
+  //   color: ``
+  // })
 
   const createNewPost = (e) => {
     e.preventDefault()
 
-    setNewPost({
+    const newPost = {
       brand: `${brand}`,
       model: `${model}`,
       color: `${color}`
-    })
-    axios.post('/new-post', newPost)
+    }
+    axios.post('http://localhost:3001/new-post', newPost)
   }
 
   return (
