@@ -1,6 +1,4 @@
-import axios from 'axios'
-import React, { useState } from 'react'
-import {BASE_URL} from '../globals'
+import React from 'react'
 
 export default function NewPost(props) {
 
