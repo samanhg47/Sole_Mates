@@ -1,4 +1,4 @@
-const db = require('../db')
+// const db = require('../db')
 const { Shoe } = require('../models')
 
 const createShoe = async (req, res) => {
