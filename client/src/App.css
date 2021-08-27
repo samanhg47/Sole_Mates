@@ -1,5 +1,18 @@
 .App {
   text-align: center;
+  border: solid black;
+}
+
+body {
+  background: grey;
+}
+
+.navimg {
+  width: 200px;
+}
+
+button {
+  border-radius: 5px;
 }
 
 .App-logo {
