@@ -4,6 +4,7 @@ import axios from 'axios'
 import Nav from './components/Nav'
 import SearchResults from './components/SearchResults'
 import Newsfeed from './components/Newsfeed'
+import NewPost from './components/NewPost'
 
 function App() {
   const [posts, setPosts] = useState([])
@@ -12,13 +13,14 @@ function App() {
   const [searchQuery, setSearchQuery] = useState('')
 
   const getPosts = async () => {
-    const res = await axios.get(`d`)
-    setPosts(res.data.results)
+    const res = await axios.get(`http://localhost:3001/`)
+    console.log(res.data)
+    setPosts(res.data)
   }
 
   useEffect(() => {
     getPosts()
-  }, [posts])
+  }, [])
 
   return (
     <div className="App">
@@ -28,7 +30,7 @@ function App() {
         toggleSearched={toggleSearched}
         setSearchResults={setSearchResults}
       />
-
+      <NewPost />
       {searched
         ? searchResults.map((result) => (
             <SearchResults

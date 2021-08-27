@@ -3,8 +3,6 @@ import Search from './Search'
 import axios from 'axios'
 
 export default function Nav(props) {
-  console.log(props)
-
   const getSearchResults = async (e) => {
     e.preventDefault()
     const search = await axios.get(`f`)

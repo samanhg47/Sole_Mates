@@ -3,7 +3,7 @@ import React from 'react'
 export default function Newsfeed(props) {
   return (
     <div className="post">
-      <h1 className="post-header">{`Post By ${props.user}`}</h1>
+      {/* <h1 className="post-header">{`Post By ${props.user}`}</h1> */}
       <p className="post-body">
         Model: {props.model} Color: {props.color} Brand: {props.brand}{' '}
       </p>
