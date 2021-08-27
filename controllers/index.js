@@ -1,7 +1,9 @@
-const Shoe = require('../models/shoe')
+const db = require('../db')
+const { Shoe } = require('../models') 
 
-const createShoes = async (req, res) => {
+const createShoe = async (req, res) => {
   try {
+    console.log("createShoe", req.body)
     const shoe = await new Shoe(req.body)
     await shoe.save()
     return res.status(201).json({
@@ -14,44 +16,29 @@ const createShoes = async (req, res) => {
 
 const getAllNewsfeed = async (req, res) => {
   try {
-    const shoe = await Shoe.find()
-    return res.status(200).json({ Shoe })
+    const shoes = await Shoe.find()
+    res.send(shoes)
   } catch (error) {
     return res.status(500).send(error.message)
   }
 }
 
-const getShoesById = async (req, res) => {
+const getShoe = async (req, res) => {
   try {
-    const { id } = req.params
-    const shoe = await Shoe.findById(id)
-    if (shoe) {
-      return res.status(200).json({ shoe })
+    const brand = req.params.keyword
+    let shoes = await Shoe.find({ brand: brand })
+    if (shoes) {
+      res.send(shoes)
     }
-    return res.status(404).send('Shoe with the specified ID does not exists')
-  } catch (error) {
-    return res.status(500).send(error.message)
-  }
-}
-
-const updateShoes = async (req, res) => {
-  try {
-    const { id } = req.params
-    const updatedShoes = await Shoe.findByIdAndUpdate(id, req.body, {
-      new: true
-    })
-    if (!updatedShoes) throw Error('Shoe not found')
-    return res.status(200).json(updatedShoes)
   } catch (error) {
     return res.status(500).send(error.message)
   }
 }
 
 module.exports = {
-  createShoes,
+  createShoe,
   getAllNewsfeed,
-  getShoesById,
-  updateShoes
+  getShoe
 }
 
 

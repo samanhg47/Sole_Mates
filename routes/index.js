@@ -1,18 +1,11 @@
 const { Router } = require('express')
-const controllers = require('../controllers/shoe')
+const controllers = require('../controllers')
 const router = Router()
 
-router.get('/', (req, res) => res.send('This is root!'))
+router.get('/', controllers.getAllNewsfeed) 
 
-router.post('/newsfeed/shoes', controllers.createShoes)
+router.get('/shoes/:brand', controllers.getShoe)
 
-router.get('/newsfeed', controllers.getAllNewsfeed)
+router.post('/new-post', controllers.createShoe)
 
-router.get('/shoes/:user_id', controllers.getShoesById)
-
-router.put('/shoes/:id', controllers.updateShoes)
-
-module.exports = {
-  router,
-  controllers
-}
+module.exports = router;
