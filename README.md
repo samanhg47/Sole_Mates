@@ -1,6 +1,6 @@
 # Sole Mates
 ### Date Started: 08/25/21
-### By: Sam'an Griffiths, Ryan Craig, and Raza Khalid
+### By: Sam'an Khaliq, Ryan Craig, and Raza Khalid
 ---
 
 ![SHOES](client/public/images/red.jpeg)
